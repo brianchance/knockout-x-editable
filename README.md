@@ -3,7 +3,7 @@ knockout-x-editable
 
 knockout binding handler for x-editable - See **http://vitalets.github.com/x-editable**
 
-**NOTE: to use the select options, you need my fork of x-editable (http://github.com//brianchance/knockout-x-editable) that allows the list source to be set to a function**
+**NOTE: to use the select options, you need my fork of x-editable (http://github.com/brianchance/x-editable) that allows the list source to be set to a function**
 
 ##Simple Usage
 **NOTE: set any editable defaults before calling ko.applyBindings**
