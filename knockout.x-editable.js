@@ -30,7 +30,7 @@
 				}
 			}
 
-			if (editableOptions.type == 'select' && !editableOptions.source && editableOptions.options) {
+			if ((editableOptions.type === 'select' || editableOptions.type === 'checklist') && !editableOptions.source && editableOptions.options) {
 				if (editableOptions.optionsCaption)
 					editableOptions.prepend = editableOptions.optionsCaption;
 
@@ -58,26 +58,50 @@
 				}
 			}
 
+			if (editableOptions.visible && ko.isObservable(editableOptions.visible)) {
+				editableOptions.toggle = 'manual';
+			}
+			
 			//create editable
 			var $editable = $element.editable(editableOptions);
 
 			//update observable on save
 			if (ko.isObservable(value)) {
-				$editable.on('save', function (e, params) {
+				$editable.on('save.ko', function (e, params) {
 					value(params.newValue);
 				})
 			};
 
+			if (editableOptions.save) {
+				$editable.on('save', editableOptions.save);
+			}
+			
 			//setup observable to fire only when editable changes, not when options change
 			//http://www.knockmeout.net/2012/06/knockoutjs-performance-gotcha-3-all-bindings.html
 			ko.computed({
 				read: function () {
 					var val = ko.utils.unwrapObservable(valueAccessor());
-					$editable.editable('setValue', val, true)
+					$editable.editable('setValue', val || '', true)
 				},
 				owner: this,
 				disposeWhenNodeIsRemoved: element
 			});
+	
+			if (editableOptions.visible && ko.isObservable(editableOptions.visible)) {
+				ko.computed({
+					read: function () {
+						var val = ko.utils.unwrapObservable(editableOptions.visible());
+						if (val)
+							$editable.editable('show');
+					},
+					owner: this,
+					disposeWhenNodeIsRemoved: element
+				});
+
+				$editable.on('hidden.ko', function (e, params) {
+					editableOptions.visible(false);
+				});
+			}
 		}
 	};
 })(ko);

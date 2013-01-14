@@ -25,7 +25,7 @@ and binding:
 <span data-bind="editable: firstName"></span>
 ```
 
-will set editable options value (value of firstName) and name to firstName. Your observable is updated to the new value in the save event.
+will set editable options value (value of firstName) and name to firstName. Your observable is updated to the new value in the save event (you can also pass your own save event that gets called after).
 
 ##Advanced
 You can pass through any editable options with: 
@@ -33,10 +33,11 @@ You can pass through any editable options with:
 <span data-bind="editable: firstName, editableOptions: {name: 'first', pk: id, url: '/save'}"></span>
 ```
 
-Note the pk can be an observable since x-editable just calls it as a function
+Note the pk can be an observable since x-editable just calls it as a function.
+The option editableOptions.visible can be passed an observable, this sets the x-editable toggle to 'manual', then uses the observable to fire the 'show' method
 
-###select options
-For select, you can pass options just as you would to knockout:
+###select and checklist options
+For select and checklist, you can pass options just as you would to knockout:
 ```html
 <span data-bind="editable: gender, editableOptions: {pk: id, options: genders, optionsText: 'text', optionsValue: 'id'}"></span>
 ```
