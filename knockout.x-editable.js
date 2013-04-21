@@ -1,4 +1,12 @@
-(function(ko) {
+(function(factory) {
+    if (typeof define === "function" && define.amd) {
+        // AMD anonymous module
+        define(["knockout", "jquery"], factory);
+    } else {
+        // No module loader (plain <script> tag) - put directly in global namespace
+        factory(window.ko, window.jQuery);
+    }
+})(function(ko, $) {
 	ko.bindingHandlers.editable = {
 		init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
 			var $element = $(element),
@@ -30,7 +38,7 @@
 				}
 			}
 
-			if ((editableOptions.type === 'select' || editableOptions.type === 'checklist') && !editableOptions.source && editableOptions.options) {
+			if ((editableOptions.type === 'select' || editableOptions.type === 'checklist'|| editableOptions.type === 'typeahead') && !editableOptions.source && editableOptions.options) {
 				if (editableOptions.optionsCaption)
 					editableOptions.prepend = editableOptions.optionsCaption;
 
@@ -104,4 +112,4 @@
 			}
 		}
 	};
-})(ko);
+});
