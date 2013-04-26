@@ -34,7 +34,7 @@ You can pass through any editable options with:
 Note the pk can be an observable since x-editable just calls it as a function.
 The option editableOptions.visible can be passed an observable, this sets the x-editable toggle to 'manual', then uses the observable to fire the 'show' method
 
-###select and checklist options
+###select, checklist and typeahead options
 For select and checklist, you can pass options just as you would to knockout:
 ```html
 <span data-bind="editable: gender, editableOptions: {pk: id, options: genders, optionsText: 'text', optionsValue: 'id'}"></span>
