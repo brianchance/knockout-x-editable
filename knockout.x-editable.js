@@ -89,7 +89,8 @@
 			ko.computed({
 				read: function () {
 					var val = ko.utils.unwrapObservable(valueAccessor());
-					$editable.editable('setValue', val || '', true)
+					if (!val) val = '';
+					$editable.editable('setValue', val, true)
 				},
 				owner: this,
 				disposeWhenNodeIsRemoved: element
