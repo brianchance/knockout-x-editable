@@ -32,7 +32,7 @@
 					//not pretty, but works
 					var initalValue = value();
 					value(testValue);
-					var res = value.isValid() ? null : value.error;
+					var res = value.isValid() ? null : ko.utils.unwrapObservable(value.error);
 					value(initalValue);
 					return res;
 				}
