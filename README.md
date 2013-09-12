@@ -43,4 +43,4 @@ For select and checklist, you can pass options just as you would to knockout:
 optionsCaption is used to set editable.prepend
 
 ###knockout.validation
-If you are using knockout.validation, I have wired up a call to the observable's isValid for editable.validate. To work, this has to push the new value into the observable, then validate, then revert back. If you have subscribed to changes, you will see them. Not the best choice, but works. Would be great if validation.validateObservable could take a value instaed of using the observable.
+If you are using knockout.validation, I have wired up a call to the observable's isValid for editable.validate. To work, this has to push the new value into the observable, then validate, then revert back. If you have subscribed to changes, you will see them. Not the best choice, but works. 
