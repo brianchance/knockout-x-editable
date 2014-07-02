@@ -1,3 +1,6 @@
+// knockout.x-editable library v0.1.0
+// (c) Brian Chance - https://github.com/brianchance/knockout-x-editable
+// Licensed MIT
 (function(factory) {
     if (typeof define === "function" && define.amd) {
         // AMD anonymous module
