@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>knockout.x-editable</id>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <title>Knockout x-editable</title>
     <authors>Brian Chance</authors>
     <owners>Brian Chance</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/brianchance/knockout-x-editable</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Knockout bindings for x-editable</description>
-    <releaseNotes />
+    <releaseNotes>minor bug fix in options handling</releaseNotes>
     <tags>knockout editable</tags>
     <dependencies>
       <dependency id="knockoutjs" version="2.3.0" />

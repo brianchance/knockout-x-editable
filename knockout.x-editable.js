@@ -59,7 +59,7 @@
 				editableOptions.source = function() {
 					return ko.utils.arrayMap(editableOptions.options(), function (item) {
 						var optionValue = applyToObject(item, editableOptions.optionsValue, item);
-						var optionText = applyToObject(item, editableOptions.optionsText, optionText);
+						var optionText = applyToObject(item, editableOptions.optionsText, optionValue);
 
 						return {
 							value: ko.utils.unwrapObservable(optionValue),
