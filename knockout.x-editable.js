@@ -41,7 +41,7 @@
 				}
 			}
 
-			if ((editableOptions.type === 'select' || editableOptions.type === 'checklist'|| editableOptions.type === 'typeahead') && !editableOptions.source && editableOptions.options) {
+			if ((editableOptions.type === 'select' || editableOptions.type === 'select2' ||editableOptions.type === 'checklist'|| editableOptions.type === 'typeahead') && !editableOptions.source && editableOptions.options) {
 				if (editableOptions.optionsCaption)
 					editableOptions.prepend = editableOptions.optionsCaption;
 
