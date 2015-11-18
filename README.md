@@ -40,7 +40,7 @@ For select and checklist, you can pass options just as you would to knockout:
 <span data-bind="editable: gender, editableOptions: {pk: id, options: genders, optionsText: 'text', optionsValue: 'id'}"></span>
 ```
 
-For select only, you can also pass in the `valueUpdate` option (see http://knockoutjs.com/documentation/value-binding.html):
+For textarea only, you can also pass in the `valueUpdate` option (see http://knockoutjs.com/documentation/value-binding.html):
 ```html
 <span data-bind="editable: comment, editableOptions: { /* ... */, valueUpdate: 'keyup'}"></span>
 ```
