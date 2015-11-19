@@ -76,12 +76,26 @@
 			//create editable
 			var $editable = $element.editable(editableOptions);
 
-			//update observable on save
-			if (ko.isObservable(value)) {
-				$editable.on('save.ko', function (e, params) {
-					value(params.newValue);
-				})
-			};
+			//apply textInput binding, if requested;
+			//or save otherwise
+			if (editableOptions.bindTextInput && editableOptions.bindTextInput === true) {
+				$editable.on('shown.ko', function(event, editable)
+				{
+					// distinguishes x-editable 'shown' event from bootstrap one
+					if (arguments.length != 2) return;
+
+					ko.applyBindingsToNode(editable.input.$input[0],
+						{
+							textInput: value
+						}, value);
+				});
+			} else {
+				if (ko.isObservable(value)) {
+					$editable.on('save.ko', function (e, params) {
+						value(params.newValue);
+					})
+				}
+			}
 
 			if (editableOptions.save) {
 				$editable.on('save', editableOptions.save);
