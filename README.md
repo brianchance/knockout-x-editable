@@ -34,15 +34,15 @@ You can pass through any editable options with:
 Note the pk can be an observable since x-editable just calls it as a function.
 The option editableOptions.visible can be passed an observable, this sets the x-editable toggle to 'manual', then uses the observable to fire the 'show' method
 
+You can also pass in the `bindTextInput` option for two-way updates (see http://knockoutjs.com/documentation/textinput-binding.html):
+```html
+<span data-bind="editable: comment, editableOptions: {/* ... */, bindTextInput: true}"></span>
+```
+
 ###select, checklist and typeahead options
 For select and checklist, you can pass options just as you would to knockout:
 ```html
 <span data-bind="editable: gender, editableOptions: {pk: id, options: genders, optionsText: 'text', optionsValue: 'id'}"></span>
-```
-
-For textarea only, you can also pass in the `valueUpdate` option (see http://knockoutjs.com/documentation/value-binding.html):
-```html
-<span data-bind="editable: comment, editableOptions: { /* ... */, valueUpdate: 'keyup'}"></span>
 ```
 
 optionsCaption is used to set editable.prepend
