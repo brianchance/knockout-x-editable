@@ -1,4 +1,4 @@
-// knockout.x-editable library v0.1.0
+// knockout.x-editable library v0.1.2
 // (c) Brian Chance - https://github.com/brianchance/knockout-x-editable
 // Licensed MIT
 (function(factory) {
