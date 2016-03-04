@@ -73,6 +73,10 @@
 				editableOptions.toggle = 'manual';
 			}
 			
+			if (editableOptions.init) {
+				$element.on('init.ko', editableOptions.init);
+			}
+			
 			//create editable
 			var $editable = $element.editable(editableOptions);
 
@@ -95,6 +99,10 @@
 						value(params.newValue);
 					})
 				}
+			}
+			
+			if (editableOptions.shown) {
+				$editable.on('shown.ko', editableOptions.shown);
 			}
 
 			if (editableOptions.save) {
