@@ -1,0 +1,23 @@
+{
+  "name": "knockout-x-editable",
+  "version": "0.1.2",
+  "description": "Knockout bindings for x-editable",
+  "main": "knockout.x-editable.js",
+  "dependencies": {
+      "knockout": ">=2.3.0",
+      "x-editable": ">=1.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianchance/knockout-x-editable.git"
+  },
+  "author": "Brian Chance",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brianchance/knockout-x-editable/issues"
+  },
+  "homepage": "https://github.com/brianchance/knockout-x-editable#readme"
+}
