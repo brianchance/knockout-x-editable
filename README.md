@@ -3,7 +3,7 @@ knockout-x-editable
 
 knockout binding handler for x-editable - See **http://vitalets.github.com/x-editable**
 
-##Simple Usage
+## Simple Usage
 **NOTE: set any editable defaults before calling ko.applyBindings**
 
 for a view model:
@@ -25,7 +25,7 @@ and binding:
 
 will set editable options value (value of firstName) and name to firstName. Your observable is updated to the new value in the save event (you can also pass your own save event that gets called after).
 
-##Advanced
+## Advanced
 You can pass through any editable options with: 
 ```html
 <span data-bind="editable: firstName, editableOptions: {name: 'first', pk: id, url: '/save'}"></span>
@@ -39,7 +39,7 @@ You can also pass in the `bindTextInput` option for two-way updates (see http://
 <span data-bind="editable: comment, editableOptions: {/* ... */, bindTextInput: true}"></span>
 ```
 
-###select, checklist and typeahead options
+### select, checklist and typeahead options
 For select and checklist, you can pass options just as you would to knockout:
 ```html
 <span data-bind="editable: gender, editableOptions: {pk: id, options: genders, optionsText: 'text', optionsValue: 'id'}"></span>
@@ -47,5 +47,5 @@ For select and checklist, you can pass options just as you would to knockout:
 
 optionsCaption is used to set editable.prepend
 
-###knockout.validation
+### knockout.validation
 If you are using knockout.validation, I have wired up a call to the observable's isValid for editable.validate. To work, this has to push the new value into the observable, then validate, then revert back. If you have subscribed to changes, you will see them. Not the best choice, but works. 
